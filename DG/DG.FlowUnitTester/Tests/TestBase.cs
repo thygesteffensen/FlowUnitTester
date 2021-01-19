@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using DG.Tools.XrmMockup;
 using IXrmMockupExtension;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
 using PAMU_CDS;
+using Parser;
 
 namespace Tests
 {
@@ -33,10 +35,20 @@ namespace Tests
         [AssemblyInitialize]
         public static void InitializeServices(TestContext context)
         {
+            var services = new ServiceCollection();
+            services.AddFlowRunner();
+            services.AddPamuCds();
+
+            var sp = services.BuildServiceProvider();
+
             var flowFolderPath =
                 new Uri(System.IO.Path.GetFullPath(@"Workflows"));
-            _pamuCds =
-                new CommonDataServiceCurrentEnvironment(flowFolderPath);
+
+            _pamuCds = sp.GetRequiredService<CommonDataServiceCurrentEnvironment>();
+            _pamuCds.AddFlows(flowFolderPath);
+            
+            // _pamuCds =
+                // new CommonDataServiceCurrentEnvironment(flowFolderPath, sp);
 
             InitializeMockup(context);
         }

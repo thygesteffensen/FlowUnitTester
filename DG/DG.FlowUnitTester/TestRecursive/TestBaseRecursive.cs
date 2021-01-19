@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using DG.Tools.XrmMockup;
 using IXrmMockupExtension;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
 using PAMU_CDS;
+using Parser;
 
 namespace TestRecursive
 {
@@ -33,9 +35,18 @@ namespace TestRecursive
         [AssemblyInitialize]
         public static void InitializeServices(TestContext context)
         {
-            var flowFolderPath = new Uri(System.IO.Path.GetFullPath(@"Workflows"));
-            _pamuCds = new CommonDataServiceCurrentEnvironment(flowFolderPath);
+            var services = new ServiceCollection();
+            services.AddFlowRunner();
+            services.AddPamuCds();
 
+            var sp = services.BuildServiceProvider();
+
+            var flowFolderPath =
+                new Uri(System.IO.Path.GetFullPath(@"Workflows"));
+
+            _pamuCds = sp.GetRequiredService<CommonDataServiceCurrentEnvironment>();
+            _pamuCds.AddFlows(flowFolderPath);
+            
             // Figure out how to get all json
 
             InitializeMockup(context);
