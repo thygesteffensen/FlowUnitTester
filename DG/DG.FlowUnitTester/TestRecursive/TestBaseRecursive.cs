@@ -16,7 +16,7 @@ namespace TestRecursive
         protected IOrganizationService orgAdminUIService;
         protected IOrganizationService orgAdminService;
         protected static XrmMockup365 crm;
-        static CommonDataServiceCurrentEnvironment _pamuCds;
+        static XrmMockupCdsTrigger _pamuCds;
 
         public TestBaseRecursive()
         {
@@ -31,7 +31,6 @@ namespace TestRecursive
             crm.ResetEnvironment();
         }
 
-
         [AssemblyInitialize]
         public static void InitializeServices(TestContext context)
         {
@@ -44,7 +43,7 @@ namespace TestRecursive
             var flowFolderPath =
                 new Uri(System.IO.Path.GetFullPath(@"Workflows"));
 
-            _pamuCds = sp.GetRequiredService<CommonDataServiceCurrentEnvironment>();
+            _pamuCds = sp.GetRequiredService<XrmMockupCdsTrigger>();
             _pamuCds.AddFlows(flowFolderPath);
             
             // Figure out how to get all json

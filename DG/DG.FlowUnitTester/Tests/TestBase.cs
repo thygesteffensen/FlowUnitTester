@@ -16,7 +16,7 @@ namespace Tests
         protected IOrganizationService orgAdminUIService;
         protected IOrganizationService orgAdminService;
         protected static XrmMockup365 crm;
-        static CommonDataServiceCurrentEnvironment _pamuCds;
+        static XrmMockupCdsTrigger _pamuCds;
 
         public TestBase()
         {
@@ -38,13 +38,17 @@ namespace Tests
             var services = new ServiceCollection();
             services.AddFlowRunner();
             services.AddPamuCds();
+            
+            // This stops the recursion or bad flow from running
+            services.Configure<CdsFlowSettings>(x =>
+                x.DontExecuteFlows = new[] {"Recursiveflow-Contact-CB0D4934-F754-EB11-A812-000D3AB11E51"});
 
             var sp = services.BuildServiceProvider();
 
             var flowFolderPath =
                 new Uri(System.IO.Path.GetFullPath(@"Workflows"));
 
-            _pamuCds = sp.GetRequiredService<CommonDataServiceCurrentEnvironment>();
+            _pamuCds = sp.GetRequiredService<XrmMockupCdsTrigger>();
             _pamuCds.AddFlows(flowFolderPath);
             
             // _pamuCds =

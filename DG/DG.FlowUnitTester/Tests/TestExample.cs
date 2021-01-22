@@ -15,12 +15,12 @@ namespace Tests
                 contact.Id = orgAdminUIService.Create(contact);
 
                 /*
-                 * JobTitle is set to "Technical Supervisor" in Power Automate flow
+                 * JobTitle is set to "Test dummy" in Power Automate flow
                  */
                 var retrievedContact = Contact.Retrieve(orgAdminService, contact.Id, c => c.JobTitle);
                 
                 Assert.IsNotNull(retrievedContact.JobTitle);
-                Assert.AreEqual("Technical Supervisor", retrievedContact.JobTitle);
+                Assert.AreEqual("Test dummy", retrievedContact.JobTitle);
             }
         }
     }

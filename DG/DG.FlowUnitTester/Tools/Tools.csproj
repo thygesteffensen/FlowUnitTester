@@ -213,6 +213,7 @@
     <None Include="bin\coretools\CrmSvcUtil.exe.config" />
     <None Include="bin\coretools\LicenseTerms.docx" />
     <None Include="bin\coretools\SolutionPackager.exe.config" />
+    <Content Include="Daxif\DownloadWorkflows.fsx" />
     <None Include="Daxif\PluginSyncDev.fsx" />
     <None Include="Daxif\WorkflowSyncDev.fsx" />
     <None Include="Daxif\_Config.fsx" />

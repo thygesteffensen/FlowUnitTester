@@ -126,11 +126,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PAMU_CDS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\PAMU_CDSce.1.0.0-alpha.23\lib\net462\PAMU_CDS.dll</HintPath>
+      <HintPath>..\packages\PAMU_CDSce.1.0.0-alpha.26\lib\net462\PAMU_CDS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PowerAutomateMockUp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\PowerAutomateMockUp.1.0.0-alpha.28\lib\net462\PowerAutomateMockUp.dll</HintPath>
+      <HintPath>..\packages\PowerAutomateMockUp.1.0.0-alpha.30\lib\net462\PowerAutomateMockUp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationFramework" />
@@ -256,10 +256,12 @@
     <Content Include="Workflows\OnlyDoes-4D244982-9356-EB11-A812-000D3AB11761.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Workflows\Recursiveflow-Contact-CB0D4934-F754-EB11-A812-000D3AB11E51.json" />
     <Content Include="Workflows\VerifyDoesprofessionisTestdummy-A9CAA73E-9456-EB11-A812-000D3AB11E51.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
