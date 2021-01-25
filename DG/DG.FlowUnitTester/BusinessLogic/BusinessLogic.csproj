@@ -155,7 +155,6 @@
     <Compile Include="Helpers\HelperBusinessDomain.cs" />
     <Compile Include="Helpers\HelperPlugin.cs" />
     <Compile Include="Helpers\HelperUtils.cs" />
-    <Compile Include="ManagerAccount.cs" />
     <Compile Include="ManagerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

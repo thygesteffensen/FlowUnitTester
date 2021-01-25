@@ -25,15 +25,14 @@ let ExtractFlowsFromSolution =
 
     let ExtractAndUnzip =
         EmptyFolder
-        Solution.Export(Env.dev, flowSolutionName, workflowPath , false, true)
+        Solution.Export(Env.dev, flowSolutionName, workflowPath , false, true) |> ignore
         use archive = ZipFile.Open(workflowPath + flowSolutionName + ".zip", ZipArchiveMode.Read)
         
         archive.ExtractToDirectory(workflowPath)
         
         archive.Dispose
     
-    
-    let OrgnaizeFiles =
+    let OrganizeFiles =
         let moveOutOfSubFolder file =
             let fileName = Path.GetFileName(file)
             File.Move(file, workflowPath + "/" + fileName)
@@ -49,5 +48,5 @@ let ExtractFlowsFromSolution =
         Directory.GetFiles(workflowPath , "*.*", SearchOption.AllDirectories) |> Array.iter deleteNonFlows
         Directory.Delete(workflowPath + "/Workflows")
 
-    OrgnaizeFiles
+    OrganizeFiles
 
