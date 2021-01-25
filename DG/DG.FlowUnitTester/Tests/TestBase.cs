@@ -41,7 +41,7 @@ namespace Tests
             
             // This stops the recursion or bad flow from running
             services.Configure<CdsFlowSettings>(x =>
-                x.DontExecuteFlows = new[] {"Recursiveflow-Contact-CB0D4934-F754-EB11-A812-000D3AB11E51"});
+                x.DontExecuteFlows = new[] {"Recursiveflow-Contact-CB0D4934-F754-EB11-A812-000D3AB11E51.json"});
 
             var sp = services.BuildServiceProvider();
 

@@ -16,7 +16,7 @@ namespace TestRecursive
             contact.Id = orgAdminService.Create(contact);
             
             Assert.ThrowsException<AggregateException>(() =>
-                orgAdminService.Update(new Contact(contact.Id) {Attributes = {["lastname"] = "Die"}}));
+                orgAdminService.Update(new Contact(contact.Id) {Attributes = {["lastname"] = "Doe"}}));
         }
     }
 }
