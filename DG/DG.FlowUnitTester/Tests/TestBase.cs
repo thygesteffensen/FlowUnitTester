@@ -1,34 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tools.XrmMockup;
-using IXrmMockupExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
 using PAMU_CDS;
 using Parser;
+using Tests.CustomActionExecutors;
 
 namespace Tests
 {
     [TestClass]
     public class TestBase
     {
-        protected IOrganizationService orgAdminUIService;
-        protected IOrganizationService orgAdminService;
-        protected static XrmMockup365 crm;
-        static XrmMockupCdsTrigger _pamuCds;
+        protected readonly IOrganizationService OrgAdminUiService;
+        protected readonly IOrganizationService OrgAdminService;
+        private static XrmMockup365 _crm;
+        private static XrmMockupCdsTrigger _pamuCds;
 
         public TestBase()
         {
-            orgAdminUIService =
-                crm.GetAdminService(new MockupServiceSettings(true, false, MockupServiceSettings.Role.UI));
-            orgAdminService = crm.GetAdminService();
+            OrgAdminUiService =
+                _crm.GetAdminService(new MockupServiceSettings(true, false, MockupServiceSettings.Role.UI));
+            OrgAdminService = _crm.GetAdminService();
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
-            crm.ResetEnvironment();
+            _crm.ResetEnvironment();
         }
 
 
@@ -38,6 +38,8 @@ namespace Tests
             var services = new ServiceCollection();
             services.AddFlowRunner();
             services.AddPamuCds();
+
+            services.AddFlowActionByName<GetEmailFromMarketing>("Run_a_Child_Flow");
             
             // This stops the recursion or bad flow from running
             services.Configure<CdsFlowSettings>(x =>
@@ -51,15 +53,12 @@ namespace Tests
             _pamuCds = sp.GetRequiredService<XrmMockupCdsTrigger>();
             _pamuCds.AddFlows(flowFolderPath);
             
-            // _pamuCds =
-                // new CommonDataServiceCurrentEnvironment(flowFolderPath, sp);
-
             InitializeMockup(context);
         }
 
         public static void InitializeMockup(TestContext context)
         {
-            crm = XrmMockup365.GetInstance(new XrmMockupSettings
+            _crm = XrmMockup365.GetInstance(new XrmMockupSettings
             {
                 BasePluginTypes = new[]
                 {
@@ -69,7 +68,7 @@ namespace Tests
                 EnableProxyTypes = true,
                 IncludeAllWorkflows = true,
                 MockUpExtensions = 
-                    new List<IMockUpExtension> {_pamuCds}
+                    new List<DG.Tools.XrmMockup.IXrmMockupExtension> {_pamuCds}
             });
         }
     }

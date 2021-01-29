@@ -9,15 +9,15 @@ namespace Tests
         [TestMethod]
         public void TestPrimaryContactIsCreated()
         {
-            using (var context = new Xrm(orgAdminUIService))
+            using (var context = new Xrm(OrgAdminUiService))
             {
                 var contact = new Contact();
-                contact.Id = orgAdminUIService.Create(contact);
+                contact.Id = OrgAdminUiService.Create(contact);
 
                 /*
                  * JobTitle is set to "Test dummy" in Power Automate flow
                  */
-                var retrievedContact = Contact.Retrieve(orgAdminService, contact.Id, c => c.JobTitle);
+                var retrievedContact = Contact.Retrieve(OrgAdminService, contact.Id, c => c.JobTitle);
                 
                 Assert.IsNotNull(retrievedContact.JobTitle);
                 Assert.AreEqual("Test dummy", retrievedContact.JobTitle);

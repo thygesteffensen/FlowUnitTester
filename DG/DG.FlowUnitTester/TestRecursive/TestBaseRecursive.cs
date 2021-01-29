@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tools.XrmMockup;
-using IXrmMockupExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
@@ -59,7 +58,7 @@ namespace TestRecursive
                 CodeActivityInstanceTypes = new Type[] { },
                 EnableProxyTypes = true,
                 IncludeAllWorkflows = true,
-                MockUpExtensions = new List<IMockUpExtension> {_pamuCds}
+                MockUpExtensions = new List<IXrmMockupExtension> {_pamuCds}
             });
         }
     }

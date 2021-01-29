@@ -4160,7 +4160,7 @@ namespace DG.XrmFramework.BusinessDomain.ServiceContext {
         
         /// <summary>
         /// <para>Combines and shows the contact's first and last names so that the full name can be displayed in views and reports.</para>
-        /// <para>Display Name: Full Name</para>
+        /// <para>Display Name: Full Name Delegate</para>
         /// </summary>
         [AttributeLogicalName("fullname")]
         public string FullName {
@@ -4255,7 +4255,7 @@ namespace DG.XrmFramework.BusinessDomain.ServiceContext {
         
         /// <summary>
         /// <para>Type the job title of the contact to make sure the contact is addressed correctly in sales calls, email, and marketing campaigns.</para>
-        /// <para>Display Name: Job Title</para>
+        /// <para>Display Name: Job Title Delegate</para>
         /// </summary>
         [AttributeLogicalName("jobtitle")]
         public string JobTitle {
@@ -8083,6 +8083,23 @@ namespace DG.XrmFramework.BusinessDomain.ServiceContext {
         
         public static SystemUser Retrieve(IOrganizationService service, Guid id, params Expression<Func<SystemUser,object>>[] attrs) {
             return service.Retrieve(id, attrs);
+        }
+        
+        /// <summary>
+        /// <para>Retrieves the record using the alternate key called 'AAD ObjectId'</para>
+        /// </summary>
+        public static SystemUser Retrieve_aadobjectid(IOrganizationService service, Guid AzureActiveDirectoryObjectId, params Expression<Func<SystemUser,object>>[] attrs) {
+            KeyAttributeCollection keys = new KeyAttributeCollection();
+            keys.Add("azureactivedirectoryobjectid", AzureActiveDirectoryObjectId);
+            return Retrieve_AltKey(service, keys, attrs);
+        }
+        
+        /// <summary>
+        /// <para>Set values for the alternate key called 'AAD ObjectId'</para>
+        /// </summary>
+        public void AltKey_aadobjectid(Guid AzureActiveDirectoryObjectId) {
+            KeyAttributes.Clear();
+            KeyAttributes.Add("azureactivedirectoryobjectid", AzureActiveDirectoryObjectId);
         }
     }
     

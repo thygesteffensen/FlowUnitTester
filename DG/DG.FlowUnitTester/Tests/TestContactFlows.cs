@@ -11,10 +11,10 @@ namespace Tests
         {
             var contact = new Contact {FirstName = "John"};
 
-            contact.Id = orgAdminService.Create(contact);
+            contact.Id = OrgAdminService.Create(contact);
 
             var retrievedContact = Contact.Retrieve(
-                orgAdminService, contact.Id,
+                OrgAdminService, contact.Id,
                 x => x.LastName,
                 x => x.JobTitle);
 
