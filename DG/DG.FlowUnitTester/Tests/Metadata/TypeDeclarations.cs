@@ -1,6 +1,62 @@
 using System;
 
 namespace DG.Tools.XrmMockup {
-    public struct SecurityRoles {
-    }
+	public struct SecurityRoles {
+		public static Guid ActivityFeeds = new Guid("cb269f84-e19d-e011-b66c-00155db528b6");
+		public static Guid AppProfileManagerAdministrator = new Guid("4758a2be-ccd8-ea11-a813-000d3a579805");
+		public static Guid AppProfileUser = new Guid("61649654-ced8-ea11-a813-000d3a579805");
+		public static Guid BasicUser = new Guid("717df759-9e44-ea11-a813-000d3a654590");
+		public static Guid BizQAApp = new Guid("88b87c37-1472-4798-ac48-d56509eb6e1d");
+		public static Guid BotAuthor = new Guid("e0d2794e-82f3-e811-a951-000d3a1bcf17");
+		public static Guid BotContributor = new Guid("2fe4d72e-e538-ea11-a81c-000d3ac3e6d8");
+		public static Guid BotTranscriptViewer = new Guid("20902168-ee38-ea11-a81c-000d3ac3e6d8");
+		public static Guid CCIadmin = new Guid("a1801436-efd6-e811-a96e-000d3a3ab886");
+		public static Guid CEOBusinessManager = new Guid("de716ec8-5907-4820-b99e-8cc99b42f9cc");
+		public static Guid CSRManager = new Guid("974b8342-7944-4759-a830-4a273de6c538");
+		public static Guid Customerserviceappaccess = new Guid("3dac4d9e-568c-e611-80d4-00155d42a122");
+		public static Guid CustomerServiceRepresentative = new Guid("31af150f-c54c-476b-bf86-1e19d0031221");
+		public static Guid CustomerVoiceAddon = new Guid("90bb098b-d3b6-ea11-a812-000d3a31eec8");
+		public static Guid DataLakeWorkspaceAppAccess = new Guid("edfcbfd2-358f-ea11-a81f-000d3a6eafd3");
+		public static Guid Delegate = new Guid("4f7cf759-9e44-ea11-a813-000d3a654590");
+		public static Guid Dynamics365AppforOutlookUser = new Guid("2407db5e-edae-4e36-9be1-fd61d4d15809");
+		public static Guid EACAppAccess = new Guid("2c321cf0-f096-ea11-a81a-000d3a6ecd99");
+		public static Guid EACReaderAppAccess = new Guid("7be5a395-6b58-4f8c-908f-97dc8810fc50");
+		public static Guid EnvironmentMaker = new Guid("d58407f2-48d5-e711-a82c-000d3a37c848");
+		public static Guid ExportCustomizationsSolutionChecker = new Guid("4931681d-8163-e811-a965-000d3a11fe32");
+		public static Guid ExportMetaData = new Guid("58b2b646-f706-eb11-a813-000d3ab11e51");
+		public static Guid FieldServiceDispatcher = new Guid("d008bfde-da92-e111-9d8c-000c2959f9b8");
+		public static Guid FileStoreServiceAppAccess = new Guid("d110d819-9b72-430f-894a-94dc87e04519");
+		public static Guid ForecastAppUser = new Guid("7bc42107-2fba-4a47-9d1d-51877a3be378");
+		public static Guid Forecastmanager = new Guid("e739f82a-9519-e911-817c-000d3a0718d1");
+		public static Guid Forecastuser = new Guid("c30c8811-9519-e911-817c-000d3a0718d1");
+		public static Guid GlobalDiscoveryServiceRole = new Guid("a855e539-7253-43d3-9ee5-43ea042b7823");
+		public static Guid HelpPageAuthor = new Guid("0e72f536-3a3a-4e74-96e9-3cab5effe10c");
+		public static Guid HelpPageConsumer = new Guid("f3d2098f-9eb0-45b3-9c7d-96526af614c4");
+		public static Guid IoTAdministrator = new Guid("5e4a9faa-b260-e611-8106-00155db8820b");
+		public static Guid IoTEndpointUser = new Guid("05f9a03f-5534-4b26-9bba-0726d33c6351");
+		public static Guid KnowledgeManager = new Guid("9eae0797-3235-432a-a337-471b71628787");
+		public static Guid MarketingManager = new Guid("b629a44c-ff30-4a9f-9e40-0ccf1f0e9719");
+		public static Guid MarketingProfessional = new Guid("f33c2c8f-4beb-434f-8abb-a173df03ecdf");
+		public static Guid Orchestrator = new Guid("efcc3ead-5983-44c6-8075-103d04904ebc");
+		public static Guid PlaybookManager = new Guid("4178df9e-4ea5-e811-8149-000d3a3a2732");
+		public static Guid PlaybookUser = new Guid("4178df9e-4ea5-e811-8149-000d3a3a2731");
+		public static Guid Productivitytoolsadministrator = new Guid("6beb51c1-0eda-e911-a81c-000d3af75d63");
+		public static Guid Productivitytoolsuser = new Guid("c49aae0a-0fda-e911-a81c-000d3af75d63");
+		public static Guid ProjectOwner = new Guid("f9a5a958-d07f-44cd-886d-eb6343309c2a");
+		public static Guid RelationshipInsightsAdmin = new Guid("016fd16e-7be7-e611-80d6-00155d204901");
+		public static Guid SalesManager = new Guid("b10ccb45-8f8a-4313-99dd-eaa3f0db5467");
+		public static Guid Salessystemdatasync = new Guid("b5b6cb27-47e9-49f7-84bb-f6823fc8461c");
+		public static Guid SalesTeamMember = new Guid("7e13fe7f-ea02-4a4e-a523-89ed9361961d");
+		public static Guid SalesInsightsAutoCaptureAdmin = new Guid("5d667671-6492-4651-a297-cb1a9981e159");
+		public static Guid Salesperson = new Guid("72bd97f6-b8c1-48a1-92eb-0030ec6dd950");
+		public static Guid ScheduleManager = new Guid("816565f1-6622-4050-a3ee-eddb9ee7ccc0");
+		public static Guid Scheduler = new Guid("ec864b5a-43d5-41dd-a204-1bc3cbd603f0");
+		public static Guid SolutionChecker = new Guid("e05075eb-9d74-e811-a95c-000d3a1c53e4");
+		public static Guid SupportUser = new Guid("9e7cf759-9e44-ea11-a813-000d3a654590");
+		public static Guid SurveyServicesAdministrator = new Guid("abce3b01-5697-4973-9d7d-fca48ca84445");
+		public static Guid SystemAdministrator = new Guid("5478f759-9e44-ea11-a813-000d3a654590");
+		public static Guid SystemCustomizer = new Guid("757df759-9e44-ea11-a813-000d3a654590");
+		public static Guid VicePresidentofMarketing = new Guid("e312c662-2182-47c1-b068-7afd167d40ad");
+		public static Guid VicePresidentofSales = new Guid("b55e9eb2-0096-4458-96ef-87914950d86e");
+	}
 }
