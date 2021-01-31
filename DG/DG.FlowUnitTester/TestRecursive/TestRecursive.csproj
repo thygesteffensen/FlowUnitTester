@@ -114,7 +114,7 @@
           <Private>True</Private>
         </Reference>
         <Reference Include="PAMU_CDS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\PAMU_CDSce.1.0.0\lib\net462\PAMU_CDS.dll</HintPath>
+          <HintPath>..\packages\PAMU_CDSce.1.0.1\lib\net462\PAMU_CDS.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="PowerAutomateMockUp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
