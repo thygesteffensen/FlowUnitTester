@@ -53,7 +53,6 @@
     <Content Include="src\dg_FlowUnitTester\lib\sdk\2016\sdk.rest.js" />
     <Content Include="src\dg_FlowUnitTester\lib\sdk\2016\sdk.soap.assign.js" />
     <Content Include="tsconfig.json" />
-    <TypeScriptCompile Include="src\dg_FlowUnitTester\dg.account.ts" />
     <Content Include="src\dg_FlowUnitTester\lib\jquery\1.11.3\jquery.min.js" />
     <Content Include="src\dg_FlowUnitTester\lib\misc\misc.json2.js" />
     <Content Include="src\dg_FlowUnitTester\lib\misc\misc.uuid.js" />
