@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <UsePAMU_CDSLocal>false</UsePAMU_CDSLocal>
+        <PAMU_CDSLocalPath>../PAMU_CDS</PAMU_CDSLocalPath>
+    </PropertyGroup>
+</Project>

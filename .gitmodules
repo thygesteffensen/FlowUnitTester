@@ -1,0 +1,3 @@
+[submodule "DG/DG.FlowUnitTester/PAMU_CDS"]
+	path = DG/DG.FlowUnitTester/PAMU_CDS
+	url = git@github.com:thygesteffensen/PAMU_CDS.git
